@@ -11,8 +11,20 @@ body {
   padding: 10px 115px 10px 85px;
   background-color: black;
 }
-.mainNav p {
+.mainNav a {
   color: white;
+  font-size: 2rem;
+  text-decoration: none;
+}
+.mainNav a:hover {
+  color: #ffcd29;
+}
+.mainNav btn-no-style {
+  background-color: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-emphasis: none;
   font-size: 2rem;
 }
 .mainNav ul {
