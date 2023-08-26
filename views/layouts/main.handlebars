@@ -3,16 +3,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
     <title>Byte Size Blog</title>
   </head>
   <body>
     <header>
       <nav class="mainNav">
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Dashboard</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/dashboard">Dashboard</a></li>
         </ul>
-        <p>Login</p>
+
+        {{#if loggedIn}}
+          <button id="logout" class="btn-no-style">Logout</button>
+        {{else}}
+          <a id="login" href="/login">Login</a>
+        {{/if}}
 
       </nav>
       <section class="hero">
@@ -26,5 +32,8 @@
     <footer>
       <h3>Byte Size Blog</h3>
     </footer>
+    {{#if logginIn}}
+      <script src="/js/logout.js"></script>
+    {{/if}}
   </body>
 </html>
