@@ -60,6 +60,25 @@ body {
   display: flex;
   align-items: center;
 }
+.noPosts {
+  margin: 370px auto 370px;
+  font-size: 3rem;
+  text-align: center;
+}
+.newPostBtn {
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 10px;
+  font-size: 2rem;
+  padding: 15px 25px;
+  cursor: pointer;
+  margin: 400px 0 25px 45%;
+}
+.newPostBtn:hover {
+  color: #ffcd29;
+  background-color: rgba(0, 0, 0, 0.911);
+}
 
 footer {
   background-color: black;

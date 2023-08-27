@@ -2,16 +2,22 @@ const router = require("express").Router();
 
 router.get("/", (req, res) => {
   console.log("Home");
-  res.render("./layouts/main");
+  res.render("homepage");
 });
 
-router.get("/login", (req, res) => {
+router.get("/homepage", (req, res) => {
   //   if (req.session.loggedIn) {
   //     res.redirect("/");
   //     return;
   //   }
-  console.log("login");
-  res.render("login");
+  console.log("homepage");
+  res.render("homepage");
 });
+
+// router.get("/dashboard", (req, res) => {
+//   res.render("./layouts/dashboard", {
+//     layout: "dashboard",
+//   });
+// });
 
 module.exports = router;
