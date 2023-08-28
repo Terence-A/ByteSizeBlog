@@ -1,16 +1,18 @@
 const router = require("express").Router();
 const { User } = require("../../models");
-
+console.log("working");
 router.post("/", async (req, res) => {
-  console.log("userRoutes");
+  console.log("before try ------------------------------------------------");
   try {
     const dbUserData = await User.create({
       username: req.body.username,
       email: req.body.email,
       password: req.body.password,
     });
-
+    console.log(dbUserData);
     req.session.save(() => {
+      req.session.userId = dbUserData.id;
+      req.session.username = dbUserData.username;
       req.session.loggedIn = true;
 
       res.status(200).json(dbUserData);
@@ -20,6 +22,16 @@ router.post("/", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// router.get("/findAll", async (req, res) => {
+//   try {
+//     const users = await User.findAll();
+//     console.log("user please work", users);
+//     return res.json(users);
+//   } catch (err) {
+//     console.log(err);
+//   }
+// });
 
 // Login
 router.post("/login", async (req, res) => {
