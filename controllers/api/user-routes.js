@@ -1,6 +1,9 @@
 const router = require("express").Router();
-const { User } = require("../../models");
+const { User, post, Comment } = require("../../models");
 console.log("working");
+const session = require("express-session");
+const withAuth = require("../../utils/auth");
+
 router.post("/", async (req, res) => {
   console.log("before try ------------------------------------------------");
   try {
