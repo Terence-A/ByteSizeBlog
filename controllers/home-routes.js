@@ -35,7 +35,7 @@ router.get("/post/:id", async (req, res) => {
         post,
       });
     } else {
-      res.status(400).return();
+      res.status(400).end();
     }
   } catch (error) {
     res.status(500).json(err);

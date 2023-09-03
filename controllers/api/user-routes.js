@@ -1,18 +1,14 @@
 const router = require("express").Router();
-const { User, post, Comment } = require("../../models");
-console.log("working");
-const session = require("express-session");
-const withAuth = require("../../utils/auth");
+const { User } = require("../../models");
 
 router.post("/", async (req, res) => {
-  console.log("before try ------------------------------------------------");
   try {
     const dbUserData = await User.create({
       username: req.body.username,
       email: req.body.email,
       password: req.body.password,
     });
-    console.log(dbUserData);
+
     req.session.save(() => {
       req.session.userId = dbUserData.id;
       req.session.username = dbUserData.username;
@@ -21,7 +17,6 @@ router.post("/", async (req, res) => {
       res.status(200).json(dbUserData);
     });
   } catch (err) {
-    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -52,14 +47,14 @@ router.post("/login", async (req, res) => {
     }
 
     req.session.save(() => {
+      req.session.userId = dbUserData.id;
+      req.session.username = dbUserData.username;
       req.session.loggedIn = true;
-
       res
         .status(200)
         .json({ user: dbUserData, message: "You are now logged in!" });
     });
   } catch (err) {
-    console.log(err);
     res.status(500).json(err);
   }
 });
