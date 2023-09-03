@@ -30,7 +30,6 @@ router.get("/login", (req, res) => {
 
 router.get("/signup", (req, res) => {
   if (req.session.loggedIn) {
-    console.log("logging in already---------------------------------------");
     res.redirect("/");
     return;
   }
