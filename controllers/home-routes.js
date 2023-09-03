@@ -1,25 +1,48 @@
 const router = require("express").Router();
+const { User, Post, Comment } = require("../models/");
 
-router.get("/", (req, res) => {
-  console.log("Home");
-  res.render("homepage");
+// Get posts for homepage
+router.get("/", async (req, res) => {
+  try {
+    const postData = await Post.findAll({
+      include: [User],
+    });
+    const posts = postData.map((post) => post.get({ plain: true }));
+
+    res.render("allPosts", {
+      posts,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
-router.get("/homepage", (req, res) => {
-  //   if (req.session.loggedIn) {
-  //     res.redirect("/");
-  //     return;
-  //   }
-  console.log("homepage");
-  res.render("homepage");
+// Get a single post
+router.get("/post/:id", async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id, {
+      include: [
+        User,
+        {
+          model: Comment,
+          include: [User],
+        },
+      ],
+    });
+    if (postData) {
+      const post = PostData.get({ plain: true });
+      res.render("singlePost", {
+        post,
+      });
+    } else {
+      res.status(400).return();
+    }
+  } catch (error) {
+    res.status(500).json(err);
+  }
 });
 
-// router.get("/dashboard", (req, res) => {
-//   res.render("./layouts/dashboard", {
-//     layout: "dashboard",
-//   });
-// });
-
+// Login route
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
     res.redirect("/");
