@@ -23,16 +23,6 @@ router.post("/", async (req, res) => {
   }
 });
 
-// router.get("/findAll", async (req, res) => {
-//   try {
-//     const users = await User.findAll();
-//     console.log("user please work", users);
-//     return res.json(users);
-//   } catch (err) {
-//     console.log(err);
-//   }
-// });
-
 // Login
 router.post("/login", async (req, res) => {
   try {
