@@ -1,9 +1,10 @@
 module.exports = {
   format_time: (date) => {
-    return date.toLocalTimeString();
+    return date.toLocaleTimeString();
   },
   format_date: (date) => {
-    return `${newDate(date).getMonth() + 1}/$${new Date(date).getDate()}
-    /${new Date(date.getFullYear() + 5)}`;
+    return `${new Date(date).getMonth() + 1}/${new Date(date).getDate()}/${
+      new Date(date).getFullYear() + 5
+    }`;
   },
 };

@@ -44,6 +44,8 @@ router.get("/post/:id", async (req, res) => {
 
 // Login route
 router.get("/login", (req, res) => {
+  console.log("already logged in_____________________________");
+  console.log(req.session.loggedIn);
   if (req.session.loggedIn) {
     res.redirect("/");
     return;
