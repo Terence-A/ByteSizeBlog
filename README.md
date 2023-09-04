@@ -142,3 +142,4 @@ Thank you for using Byte Size Blog, and happy blogging!
 ## Deploy 
 
 Heroku Deploy:  https://byte-size-blog-29657a568883.herokuapp.com/
+Github Repo:  https://github.com/Terence-A/ByteSizeBlog#deploy
