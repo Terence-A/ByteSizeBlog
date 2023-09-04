@@ -15,6 +15,7 @@ Byte Size Blog is a CMS-style blog site designed for developers and tech enthusi
 - [License](#license)
 - [Credits](#credits)
 - [Questions](#questions)
+- [Deploy](#deploy)
 
 ## User Story
 
@@ -137,3 +138,7 @@ logo used
 If you have any questions or need further assistance with Byte Size Blog, please feel free to contact me via email.
 
 Thank you for using Byte Size Blog, and happy blogging!
+
+## Deploy 
+
+Heroku Deploy:  https://byte-size-blog-29657a568883.herokuapp.com/
