@@ -1,0 +1,34 @@
+{{! Edit Blog Post Page }}
+<div class="container">
+
+  <form class="createBlogPost" id="submitEdit">
+    <h2>Edit Post</h2>
+
+    <div class="edit-form-head">
+      <label class="edit-form-title">Title</label>
+      <input
+        class="form-control"
+        id="titleInput"
+        maxlength="50"
+        value="{{title}}"
+      />
+    </div>
+
+    {{! body }}
+    <div class="edit-form-body">
+      <label class="form-label">Content</label>
+      <textarea
+        class="form-control"
+        id="bodyInput"
+        rows="10"
+      >{{description}}</textarea>
+    </div>
+    {{! submit Btn }}
+    <div class="edit-submit-btn">
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+
+</div>
+
+<script src="/js/submitNewEdit.js"></script>

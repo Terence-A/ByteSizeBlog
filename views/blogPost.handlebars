@@ -1,0 +1,41 @@
+{{!-- Blog Post Page --}}
+<div class="container-blog-post">
+    <div>
+        <div class="blog-post-main">
+            <div class="blog-post">
+                <div class="blog-post-header">
+                    <h2>{{title}}</h2>
+                    <p>Created by {{user.name}} on {{format_date date_created}}</p>
+                </div>
+                <p class="blog-description">{{description}}</p>
+                <div class="blog-edit-btns">
+                    <button class="post-btn" id="editBtn">Edit</button>
+                    <button class="post-btn" id="deleteBtn">Delete</button>
+                </div>
+            </div>
+
+            <div class="blog-comment-body">
+                <div class="comment-icon">
+                    <img src="/images/comment.png" alt="">
+                    <h3>Comments</h3>
+                </div>
+                <div class="comment-content">
+                    {{#each comments as |comment| }}
+                        <div class="blog-comments">
+                            <img src="/images/pencil-icon.png" alt="">
+                           <p>{{comment.comment_body}} by ~ <span>{{comment.user.name}} on {{format_date comment.date_created}}</p></span>
+                            </br>
+                        </div>
+                        
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{> comment-form }}
+
+<script src="/js/newCommentHandler.js"></script>
+<script src="/js/deleteBlogPost.js"></script>
+<script src="/js/editBlogPost.js"></script>
