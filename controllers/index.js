@@ -1,19 +1,11 @@
-// connects routes
+// Imports
 const router = require("express").Router();
-
-//api and home routes
 const apiRoutes = require("./api");
-const homeRoutes = require("./home-routes.js");
-const dashboardRoutes = require("./dashboard-routes.js");
+const homeRoutes = require("./homeRoutes");
 
+// Middleware
 router.use("/", homeRoutes);
 router.use("/api", apiRoutes);
-router.use("/dashboard", dashboardRoutes);
 
-// if page not found
-router.use((req, res) => {
-  res.status(404).end();
-});
-
-// exports router
+// Exports
 module.exports = router;

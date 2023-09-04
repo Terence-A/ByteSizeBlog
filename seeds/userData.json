@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Matt Mays",
+    "email": "talltrees@hotmail.com",
+    "password": "password123"
+  },
+  {
+    "name": "Sam Roberts",
+    "email": "hardroad@gmail.com",
+    "password": "password1234"
+  },
+  {
+    "name": "Bradley Nowell",
+    "email": "badfish@aol.com",
+    "password": "password12345"
+  }
+]

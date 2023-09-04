@@ -1,1 +1,32 @@
-<button class="newPostBtn">+ New Post</button>
+{{!-- User Dashboard Page --}}
+<div class="dashboard-title">
+    <div class="user-name">
+        <h2 id="blogName">{{name}}'s Blog</h2>
+    </div>
+</div>
+<div >
+            <div >
+                {{#if blogPosts.length}}
+                    {{#each blogPosts as |blogPost|}}
+                        {{> dashboardPost blogPost}}
+                        <br>
+                    {{/each}}
+                {{/if}}
+            </div>  
+
+    {{#if (is_my_page user.id userId)}}
+    <div class="container-create-btn">
+        <div>
+            <a href="/create"><button >+ New Post</button></a>
+        </div>
+    </div>
+    {{else}}
+    <div class="container">
+        <div>
+            <p>No posts yet!</p>
+        </div>
+    </div>
+    {{/if}}
+</div>
+
+<script src="/js/dashboard.js"></script>

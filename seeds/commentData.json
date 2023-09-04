@@ -1,0 +1,38 @@
+[
+  {
+    "comment_body": "Thats great, I didnt know that",
+    "date_created": "April 1, 2023",
+    "user_id": 2,
+    "blogPost_id": 1
+  },
+  {
+    "comment_body": "Somehow I knew that",
+    "date_created": "April 2, 2023",
+    "user_id": 3,
+    "blogPost_id": 1
+  },
+  {
+    "comment_body": "Makes sense",
+    "date_created": "September 4, 2023",
+    "user_id": 3,
+    "blogPost_id": 2
+  },
+  {
+    "comment_body": "Thats what I thought",
+    "date_created": "September 4, 2023",
+    "user_id": 1,
+    "blogPost_id": 2
+  },
+  {
+    "comment_body": "Good to know!",
+    "date_created": "September 5, 2023",
+    "user_id": 2,
+    "blogPost_id": 3
+  },
+  {
+    "comment_body": "Delays suck!",
+    "date_created": "September 5, 2023",
+    "user_id": 1,
+    "blogPost_id": 3
+  }
+]

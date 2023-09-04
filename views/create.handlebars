@@ -1,0 +1,21 @@
+{{! Create Post }}
+<div class="container">
+  <form class="createBlogPost">
+    <h3 class="create-title">Create New Post</h3>
+    <div class="create-post">
+      <label class="form-label">Title</label>
+      <input class="form-control" id="titleInput" maxlength="50" />
+    </div>
+    {{! body }}
+    <div class="create-post-body">
+      <label class="form-label">Body</label>
+      <textarea class="form-control" id="bodyInput" rows="10"></textarea>
+    </div>
+    {{! submit Btn }}
+    <div>
+      <button type="submit" class="create-btn">Submit</button>
+    </div>
+  </form>
+</div>
+
+<script src="/js/newPostHandler.js"></script>
